@@ -53,27 +53,27 @@ SPOTIFY_SECRET=your-spotify-secret
 
 ```
 
-   * This file will be used by the `<span style="color: red"> dotenv </span>` package to set what are known as environment variables to the global `<span style="color: red"> process.env </span>` object in node. These are values that are meant to be specific to the computer that node is running on, and since we are gitignoring this file, they won't be pushed to github — keeping our API key information private.
+   * This file will be used by the `dotenv` package to set what are known as environment variables to the global `process.env` object in node. These are values that are meant to be specific to the computer that node is running on, and since we are gitignoring this file, they won't be pushed to github — keeping our API key information private.
 
-   *If someone wanted to clone your app from github and run it themselves, they would need to supply their own `<span style="color: red"> .env </span>` file for it to work.
+   *If someone wanted to clone your app from github and run it themselves, they would need to supply their own `.Env` file for it to work.
    
    
 
-5. Make a file called `<span style="color: red">random.text</span>`.
+5. Make a file called `random.text`.
 
-   * Inside of `<span style="color: red">random.text</span>` put the following in with no extra characters or white space:
+   * Inside of `random.text` put the following in with no extra characters or white space:
      
      * spotify-this-song,"I Want it That Way"
 
-6. Make a JavaScript file named `<span style="color: red">liri.js</span>`.
+6. Make a JavaScript file named `liri.js`.
 
-7. At the top of the `<span style="color: red">liri.js</span>`file,add code to read and set any environment variables with the dotenv package:
+7. At the top of the `liri.js`file,add code to read and set any environment variables with the dotenv package:
 ```
-reuire("<span style="color: red">dotenv</span>").config();
+reuire("dotenv").config();
 ```
-8. Add the code required to import the `<span style="color: red">keys.js</span>` file and store it in a variable.
+8. Add the code required to import the `keys.js` file and store it in a variable.
 ```
-reuire("<span style="color: red">"./keys.js"</span>").config();
+ var keys = require("./keys.js");
 ```
 
    * You should then be able to access your keys information like so
@@ -82,14 +82,14 @@ reuire("<span style="color: red">"./keys.js"</span>").config();
    ```
   9. Make it so liri.js can take in one of the following commands:
 
-   * `<span style="color: red">concert-this</span>`.
-   * `<span style="color: red">spotify-this</span>`.
-   * `<span style="color: red">movie-this</span>`.
-   * `<span style="color: red">do-this</span>`.
+   * `concert-this`.
+   * `spotify-this`.
+   * `movie-this`.
+   * `do-this`.
 
 ### What Each Command Should Do
 
-1. `<span style="color: red">node liri.js concert-this '<artist/band name here>'</span>`.
+1. `node liri.js concert-this'<artist/band name here>'`.
 
    * This will search the Bands in Town Artist Events API ("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp") for an artist and render the following information about each event to the terminal:
       * Name of the venue
@@ -97,7 +97,7 @@ reuire("<span style="color: red">"./keys.js"</span>").config();
       * Date of the Event (use moment to format this as "MM/DD/YYYY")
 ![Log Output](screenshots/image1.png)
 
-2. `<span style="color: red">node liri.js spotify-this '<song name here>'</span>`.
+2. `node liri.js spotify-this '<song name here>'`.
 
    * This will show the following information about the song in your terminal/bash window
      
@@ -110,7 +110,7 @@ reuire("<span style="color: red">"./keys.js"</span>").config();
      * The album that the song is from
 ![Log Output](screenshots/image2.png)
 
- 3. `<span style="color: red">node liri.js movie-this '<movie name here>'</span>`.
+ 3. `node liri.js movie-this '<movie name here>'`.
 
    * This will output the following information to your terminal/bash window:
 
@@ -133,12 +133,13 @@ reuire("<span style="color: red">"./keys.js"</span>").config();
    
    * You'll use the request package to retrieve data from the OMDB API. Like all of the in-class activities, the OMDB API requires an API key. You may use `trilogy`.
 
-4. `<span style="color: red">node liri.js do-this</span>`.
+4. `node liri.js do-this`.
    
    * Using the `fs` Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
      
      * It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
      
      * Feel free to change the text in that document to test out the feature for other commands.
+     ![Log Output](screenshots/image4.png)
 
 
